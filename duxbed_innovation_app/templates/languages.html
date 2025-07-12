@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+ {%block style%}
+
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+ 
+  {%endblock%}
+{% block content %}
+<div class="container mt-5 text-center">
+    <h2 class="mb-4">🌍 Choose Your Language</h2>
+
+    <div class="row justify-content-center">
+        <div class="col-md-3">
+            <a href="?lang=en" class="btn btn-outline-primary btn-lg w-100 mb-3">🇬🇧 English</a>
+        </div>
+        <div class="col-md-3">
+            <a href="?lang=ml" class="btn btn-outline-success btn-lg w-100 mb-3">🇮🇳 മലയാളം</a>
+        </div>
+        <div class="col-md-3">
+            <a href="?lang=hi" class="btn btn-outline-warning btn-lg w-100 mb-3">🇮🇳 हिन्दी</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

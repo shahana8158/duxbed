@@ -1,0 +1,107 @@
+.why-dux-section {
+  background-color: #f8f9fa;
+  padding: 60px 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.why-dux-heading {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #5a026d;
+  margin-bottom: 10px;
+}
+
+.why-dux-subheading {
+  font-size: 1.1rem;
+  color: #444;
+  text-align: justify;
+  line-height: 1.8;
+  max-width: 950px;
+  margin: 20px auto 50px;
+  padding: 0 15px;
+}
+
+.feature-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 50px;
+  gap: 30px;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.feature-image {
+  flex: 1;
+  padding: 10px;
+  max-width: 100%;
+}
+
+.feature-image img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.feature-text {
+  flex: 1;
+  padding: 10px;
+}
+
+.feature-text h3 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #2d2d2d;
+  margin-bottom: 15px;
+}
+
+.feature-text p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.card-style {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  background-color: #ffffffee;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.card-style:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .feature-row,
+  .reverse {
+    flex-direction: column !important;
+  }
+
+  .feature-text h3 {
+    text-align: center;
+  }
+
+  .feature-text p {
+    text-align: justify;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+

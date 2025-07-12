@@ -1,0 +1,110 @@
+{% extends 'base.html'%}
+
+{% load static %}
+
+ {%block style%}
+
+<link rel="stylesheet" href="{% static 'css/bedcot.css' %}">
+
+ 
+  {%endblock%}
+
+
+ {%block content%}
+
+
+<h1 class="text-center mt-4">Storage Beds</h1><hr>
+<p >
+  Discover our space-saving storage beds that combine comfort with smart design. Ideal for modern homes, these beds offer built-in storage to keep your space neat and organized.
+</p>
+
+
+
+
+<div class="container-fluid" data-aos="fade-up" data-aos-duration="800">
+    <div class="row justify-content-center">
+        {% for item in products %}
+        <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center mb-4">
+            <div class="card h-100">
+                <img src="{{ item.image.url }}" class="card-img-top" alt="{{ item.product_name }}">
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{ item.name }}</h5>
+                    <p class="card-text">{{ item.details }}</p>
+                    <p class="card-text"><strong>Price : ₹{{ item.price }}/-</strong></p>
+
+                      {% if user.is_superuser %}
+                          <!-- Example inside your product card (only for admin) -->
+                         <a href="{% url 'edit_product' item.id %}?next={{ request.path }}" class="btn btn-warning btn-sm me-2">Edit</a>
+
+
+                         <a href="{% url 'delete_product' item.id %}?next={{ request.path }}" class="btn btn-danger btn-sm">Delete</a>
+                        {% endif %}
+                         <!-- <a style="background-color: purple; color:white;" href="#" class="btn btn-outline-primary">View</a>
+                    <button style="background-color: #1d7047; color:#f5f5f5;"class="btn btn-outline-success" onclick="openChatBox()">Enquire Now</button> -->
+                </div>
+            </div>
+        </div>
+             {% endfor %}
+    </div>
+</div>
+<button onclick="openChatBox()" class="bubble-enquire-btn" data-aos="fade-up" data-aos-duration="800">
+  Enqire Now
+</button>
+<!-- chatbox.html -->
+<div id="chatbox" style="display:none; position:fixed; bottom:80px; right:20px; width:350px; height:420px; border:1px solid #ccc; border-radius:10px; background:#fff; z-index:9999; box-shadow:0 0 10px rgba(0,0,0,0.2); flex-direction: column;">
+  <div style="background:#198754; color:white; padding:10px; border-top-left-radius:10px; border-top-right-radius:10px;">
+    Chat Support
+    <button onclick="closeChatBox()" style="float:right; background:none; border:none; color:white;">×</button>
+  </div>
+
+  <div id="chat-body" style="flex-grow:1; overflow-y:auto; padding:10px;">
+    <div><strong>Support:</strong> How can I help you?</div>
+  </div>
+
+  <div style="display:flex; padding:10px; gap:5px; border-top:1px solid #ddd;">
+    <input type="text" id="userMessage" class="form-control" placeholder="Type your message">
+    <button onclick="sendMessage()" class="btn btn-success">Send</button>
+  </div>
+</div>
+
+<!-- Chatbox JS -->
+<script>
+  function openChatBox() {
+    const box = document.getElementById('chatbox');
+    box.style.display = 'flex';
+  }
+
+  function closeChatBox() {
+    const box = document.getElementById('chatbox');
+    box.style.display = 'none';
+  }
+
+  function sendMessage() {
+    let msgInput = document.getElementById('userMessage');
+    let msg = msgInput.value.trim();
+    if (msg === "") return;
+
+    let chatBody = document.getElementById('chat-body');
+    chatBody.innerHTML += `<div><strong>You:</strong> ${msg}</div>`;
+    chatBody.innerHTML += `<div><strong>Support:</strong> For more enquiry WhatsApp on this number xxxxxxxxxx</div>`;
+    msgInput.value = "";
+
+    // auto scroll to bottom
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }
+
+  // Send on Enter key too
+  document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('userMessage').addEventListener('keypress', function (e) {
+      if (e.key === 'Enter') {
+        sendMessage();
+      }
+    });
+  });
+</script>
+
+
+
+
+
+  {%endblock%}

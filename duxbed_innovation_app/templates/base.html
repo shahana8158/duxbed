@@ -1,0 +1,308 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Duxbed
+  {%block title%}
+
+ {%endblock%}
+
+    </title>
+ 
+<!-- ✅ Latest Bootstrap CSS (Keep only one version) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- ✅ Bootstrap Icons (optional, but useful) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+<!-- ✅ Google Fonts (your custom font) -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+  
+
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+ {%block style%}
+
+   {%endblock%}
+
+</head>
+<body>
+<body>
+
+<nav id="nav1" class="navbar navbar-expand-lg custom-collapse shadow-sm px-5 position-relative" style="background: linear-gradient(to right, #450660, #f0ddf0, #56046d); color: white;">
+  <div class="container-fluid">
+
+    <!-- 🔹 Mobile Logo -->
+    <a class="navbar-brand mx-auto d-lg-none" href="#" style="font-size: 50px; font-family: 'Georgia'; font-weight: bold; color: #450660">DUXBED</a>
+
+    <!-- 🔹 Hamburger Button (custom toggle, NOT Bootstrap) -->
+    <button class="navbar-toggler" type="button" id="menuToggle" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- 🔹 Desktop Nav Only -->
+    <div class="collapse navbar-collapse justify-content-between d-none d-lg-flex" id="mainNavbar">
+      <!-- 🔸 Left -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="foldableDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Foldable<br>Furniture
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="foldableDropdown">
+            <li><a class="dropdown-item" href="/bedcot">> Bed Cot</a></li>
+            <li><a class="dropdown-item" href="/sofacomebed">> Sofa Cum Bed</a></li>
+            <li><a class="dropdown-item" href="/storagebed">> Storage Bed</a></li>
+            <li><a class="dropdown-item" href="/bridalset">> Bridal Set</a></li>
+            <li><a class="dropdown-item" href="/ironboard">> Iron Board</a></li>
+            <li><a class="dropdown-item" href="/shoerack">> Shoe Rack</a></li>
+            <li><a class="dropdown-item" href="/diningtable">> Dining Table</a></li>
+            <li><a class="dropdown-item" href="/coffeecounter">> Coffee Counter</a></li>
+            <li><a class="dropdown-item" href="/studyunit">> Study Unit</a></li>
+            <li><a class="dropdown-item" href="/mirrorunit">> Mirror Unit</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/solidfurniture">Solid <br> Furniture</a>
+        </li>
+      </ul>
+
+      <!-- 🔸 Center Logo -->
+      <div class="nav-center-logo" style="font-size: 32px; font-family: 'Georgia'; font-weight: bold; color: #450660;">DUXBED</div>
+
+      <!-- 🔸 Right -->
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="modularDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Modular <br> Kitchen
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="modularDropdown">
+            <li><a class="dropdown-item" href="/islandkitchen">> Island Kitchen</a></li>
+            <li><a class="dropdown-item" href="/lshapekitchen">> L Shaped Kitchen</a></li>
+            <li><a class="dropdown-item" href="/ushapekitchen">> U Shaped Kitchen</a></li>
+            <li><a class="dropdown-item" href="/parallelkitchen">> Parallel Kitchen</a></li>
+            <li><a class="dropdown-item" href="/straightkitchen">> Straight Kitchen</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/interior">Interior <br> Designing</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- ✅ Mobile Transparent Floating Menu -->
+    <div class="custom-mobile-menu d-none d-lg-none" id="customMenuBox">
+      <ul class="navbar-nav">
+
+        <!-- 🔽 Foldable Dropdown -->
+        <li class="nav-item dropdown-mobile">
+          <a href="#" class="nav-link dropdown-toggle-mobile">Foldable Furniture</a>
+          <ul class="dropdown-mobile-list">
+            <li><a class="dropdown-item" href="/bedcot">> Bed Cot</a></li>
+            <li><a class="dropdown-item" href="/sofacomebed">> Sofa Cum Bed</a></li>
+            <li><a class="dropdown-item" href="/storagebed">> Storage Bed</a></li>
+            <li><a class="dropdown-item" href="/bridalset">> Bridal Set</a></li>
+            <li><a class="dropdown-item" href="/ironboard">> Iron Board</a></li>
+            <li><a class="dropdown-item" href="/shoerack">> Shoe Rack</a></li>
+            <li><a class="dropdown-item" href="/diningtable">> Dining Table</a></li>
+            <li><a class="dropdown-item" href="/coffeecounter">> Coffee Counter</a></li>
+            <li><a class="dropdown-item" href="/studyunit">> Study Unit</a></li>
+            <li><a class="dropdown-item" href="/mirrorunit">> Mirror Unit</a></li>
+          </ul>
+        </li>
+
+        <!-- 🔽 Modular Dropdown -->
+        <li class="nav-item dropdown-mobile">
+          <a href="#" class="nav-link dropdown-toggle-mobile">Modular Kitchen</a>
+          <ul class="dropdown-mobile-list">
+            <li><a class="dropdown-item" href="/islandkitchen">> Island Kitchen</a></li>
+            <li><a class="dropdown-item" href="/lshapekitchen">> L Shaped Kitchen</a></li>
+            <li><a class="dropdown-item" href="/ushapekitchen">> U Shaped Kitchen</a></li>
+            <li><a class="dropdown-item" href="/parallelkitchen">> Parallel Kitchen</a></li>
+            <li><a class="dropdown-item" href="/straightkitchen">> Straight Kitchen</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="/solidfurniture">Solid Furniture</a></li>
+        <li class="nav-item"><a class="nav-link" href="/interior">Interior Design</a></li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+
+<!-- 🔽 Second Navbar -->
+<nav class="second-navbar position-relative">
+  <div class="container-fluid d-flex justify-content-between align-items-center py-1 px-4">
+
+    <!-- ✅ Only Mobile Menu Toggle Button on Right -->
+    <button class="second-navbar-toggler d-lg-none ms-auto" id="secondMenuToggle" type="button">
+      <i class="bi bi-list" style="font-size: 30px; color: white;"></i>
+    </button>
+
+    <!-- ✅ Desktop Links (Visible on Large Screens Only) -->
+    <div class="d-none d-lg-flex align-items-center ms-auto">
+      <a href="/" class="second-nav-link mx-3 d-flex align-items-center">
+        <i class="bi bi-house-door me-1"></i> Home
+      </a>
+      <a href="/stores" class="second-nav-link mx-3 d-flex align-items-center">
+        <i class="bi bi-columns-gap me-1"></i> Stores
+      </a>
+      <a class="second-nav-link mx-3 d-flex align-items-center" href="/why-dux">Why Dux</a>
+      <a class="second-nav-link mx-3 d-flex align-items-center" href="/career">Career</a>
+      <a class="second-nav-link mx-3 d-flex align-items-center" href="/more">More</a>
+      <a class="second-nav-link mx-3 d-flex align-items-center" href="/search">
+        <i class="bi bi-search me-1"></i>Search
+      </a>
+
+      {% if user.is_authenticated and user.is_superuser %}
+      <div class="dropdown mx-3">
+        <a class="second-nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <span class="me-1">➕</span> Add
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="{% url 'add_product' %}">Add Product</a></li>
+          <li><a class="dropdown-item" href="{% url 'add_review' %}">Add Review</a></li>
+        </ul>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- ✅ Floating Mobile Menu Box -->
+  <div class="second-mobile-menu-box d-lg-none d-none" id="secondMobileMenuBox">
+    <a href="/" class="second-nav-link d-block mb-2">🏠 Home</a>
+    <a href="/stores" class="second-nav-link d-block mb-2">🏢 Stores</a>
+    <a href="/why-dux" class="second-nav-link d-block mb-2">💡 Why Dux</a>
+    <a href="/career" class="second-nav-link d-block mb-2">💼 Career</a>
+    <a href="/more" class="second-nav-link d-block mb-2">📦 More</a>
+    <a href="/search" class="second-nav-link d-block mb-2">🔍 Search</a>
+    {% if user.is_authenticated and user.is_superuser %}
+      <a href="{% url 'add_product' %}" class="second-nav-link d-block mb-2">➕ Add Product</a>
+      <a href="{% url 'add_review' %}" class="second-nav-link d-block">➕ Add Review</a>
+    {% endif %}
+  </div>
+</nav>
+
+
+
+
+
+<!-- <video autoplay loop muted playsinline style="width: 100%; height: auto;">
+  <source src="https://v.ftcdn.net/05/85/95/69/700_F_585956923_QPxw6ERZn0usCg3EuzvBRHqmQBsFHubP_ST.mp4" type="video/mp4">
+   -->
+
+<!-- Video Background Section -->
+
+
+<!-- Booking Button (fixed at bottom-left) -->
+
+
+
+
+
+<!-- Booking Button (Fixed Position) -->
+<button class="booking-button" type="button" data-bs-toggle="modal" data-bs-target="#bookingModal">
+  Book Appointment
+</button>
+
+<!-- Booking Modal -->
+<div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content rounded-4 overflow-hidden shadow-lg">
+
+      <!-- 🟣 Modal Header -->
+      <div class="modal-header text-white" style="background: linear-gradient(45deg,  #48075e,  #450660);">
+        <h5 class="modal-title fw-bold" id="bookingModalLabel">Book an Appointment for Interior</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <!-- 🔵 Modal Body with Form -->
+      <div class="modal-body bg-light">
+        <form method="POST" action="{% url 'submit_booking' %}" class="p-3 rounded-4 bg-white shadow-sm">
+          {% csrf_token %}
+
+          <div class="mb-3">
+            <label for="name" class="form-label fw-semibold">Full Name</label>
+            <input type="text" class="form-control rounded-pill px-4 py-2" name="name" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="address" class="form-label fw-semibold">Address</label>
+            <input type="text" class="form-control rounded-pill px-4 py-2" name="address" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="phone" class="form-label fw-semibold">Contact Number</label>
+            <div class="input-group">
+              <span class="input-group-text bg-dark text-white">+91</span>
+              <input type="tel" class="form-control rounded-end-pill px-4 py-2" name="phone" maxlength="10" required>
+            </div>
+          </div>
+
+          <div class="text-center mt-3">
+            <button type="submit" class="btn btn-primary px-4 py-2 rounded-pill">Submit Booking</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+{%block content%}
+
+{%endblock%}
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menuToggle");
+    const menuBox = document.getElementById("customMenuBox");
+
+    // Toggle custom mobile menu
+    menuToggle.addEventListener("click", function () {
+      menuBox.classList.toggle("d-none");
+    });
+
+    // Toggle each dropdown inside custom menu
+    const dropdownToggles = document.querySelectorAll(".dropdown-toggle-mobile");
+    dropdownToggles.forEach(function (toggle) {
+      toggle.addEventListener("click", function (e) {
+        e.preventDefault();
+        const parent = this.closest(".dropdown-mobile");
+        parent.classList.toggle("open");
+      });
+    });
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("secondMenuToggle");
+    const menu = document.getElementById("secondMobileMenuBox");
+
+    toggle.addEventListener("click", function () {
+      menu.classList.toggle("d-none");
+    });
+  });
+</script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

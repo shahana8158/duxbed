@@ -1,0 +1,83 @@
+ .career-header {
+    background: linear-gradient(to right, #4d004d, #da84d2);
+    color: white;
+    padding: 40px 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .career-card {
+    background-color: #fff;
+    border: 1px solid #eee;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  #success-message {
+    animation: fadeout 0.5s ease-in-out 2s forwards;
+  }
+
+
+  @keyframes fadeout {
+    to { opacity: 0; visibility: hidden; }
+  }
+  .career-form-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.styled-form {
+   background: linear-gradient(to right, #350251, #da84d2);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 450px;
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.styled-form label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+  color: #f3f1f5;
+}
+
+.styled-form input[type="text"],
+.styled-form input[type="email"],
+.styled-form input[type="file"] {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: 0.3s;
+}
+
+.styled-form input:focus {
+  border-color: #800080;
+  box-shadow: 0 0 5px #d8bfd8;
+}
+
+.submit-btn {
+  background: linear-gradient(to right, #6a1b9a, #ab47bc);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(to right, #4a0072, #9c27b0);
+}

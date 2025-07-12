@@ -1,0 +1,43 @@
+.container.mt-5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    text-align: center;
+}
+
+.container.mt-5 h2 {
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    color: #4b0561;
+    margin-bottom: 30px;
+}
+
+form.mx-auto {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 450px;
+}
+
+.btn-success {
+    background-color: #3f0561;
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: #3a044a;
+}
+body {
+     background: linear-gradient(to right, #e0c2ed, #b166d3);
+    font-family: 'Poppins', sans-serif;
+}
+form.mx-auto {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}

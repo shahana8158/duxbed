@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
+{% endif %}
+
+<div class="container mt-5">
+    <div class="card shadow p-4">
+        <h2 class="text-center mb-4">➕ Add New Product</h2>
+
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label class="form-label">Product Name</label>
+                <input type="text" name="name" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Price</label>
+                <input type="text" name="price" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Details</label>
+                <textarea name="details" class="form-control" rows="4"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Category</label>
+                <select id="category-select" name="category" class="form-select" required>
+                    <option value="">Select Category</option>
+                    {% for category in categories %}
+                        <option value="{{ category.id }}">{{ category.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Subcategory</label>
+                <select name="subcategory" id="subcategory-select" class="form-select" required>
+                    <option value="">Select Subcategory</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Image</label>
+                <input type="file" name="image" class="form-control" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Add Product</button>
+        </form>
+    </div>
+</div>
+
+<!-- Pass subcategory data as JSON -->
+<script type="application/json" id="subcategory-data">
+{
+    {% for category in categories %}
+    "{{ category.id }}": [
+        {% for sub in category.subcategory_set.all %}
+            {"id": "{{ sub.id }}", "name": "{{ sub.name }}"}{% if not forloop.last %},{% endif %}
+        {% endfor %}
+    ]{% if not forloop.last %},{% endif %}
+    {% endfor %}
+}
+</script>
+
+<!-- JS to populate subcategory based on selected category -->
+<script>
+    const categorySelect = document.getElementById("category-select");
+    const subcategorySelect = document.getElementById("subcategory-select");
+
+    const subcategoryData = JSON.parse(document.getElementById("subcategory-data").textContent);
+
+    categorySelect.addEventListener("change", function () {
+        const selectedCategory = this.value;
+        subcategorySelect.innerHTML = "<option value=''>Select Subcategory</option>";
+
+        if (subcategoryData[selectedCategory]) {
+            subcategoryData[selectedCategory].forEach(function (sub) {
+                const option = document.createElement("option");
+                option.value = sub.id;
+                option.textContent = sub.name;
+                subcategorySelect.appendChild(option);
+            });
+        }
+    });
+</script>
+
+<script>
+    setTimeout(() => {
+        const alert = document.querySelector('.alert');
+        if (alert) {
+            alert.remove();
+        }
+    }, 3000); // 3 seconds
+</script>
+
+
+{% endblock %}

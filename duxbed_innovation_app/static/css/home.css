@@ -1,0 +1,274 @@
+.cart-heading {
+    margin-top: 30px;
+    font-family: 'Cinzel', serif;
+}
+.cart-subtext {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.custom-purple-btn {
+    background-color: rgb(72, 7, 102);
+    border: none;
+    color: white;
+
+  
+}
+.card-body {
+  text-align: center;
+}
+
+.card{
+    margin-bottom: 10px;
+}
+
+
+.custom-purple-btn:hover {
+    background-color: #4d086d; /* dark purple on hover */
+}
+.card-img-top {
+    width: 100%;
+    height: 250px; /* Set your preferred height */
+    object-fit: cover; /* Ensures image fills the area without distortion */
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+  color: #141412d8;
+}
+
+.footer p {
+  margin-bottom: 0.5rem;
+}
+
+
+.footer {
+  background-color: #3c0950;
+  color: #f1f1f1;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+   position: relative;
+    z-index: 0; 
+     pointer-events: auto; 
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-column {
+  flex: 1 1 180px;
+  margin: 20px;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-column h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  text-decoration: none;
+  color: #f1f1f1;
+  transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: #b80202;
+  text-decoration: wavy;
+}
+
+.footer-column p {
+  margin: 6px 0;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  margin-right: 12px;
+  font-size: 20px;
+  color: #f1f1f1;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ff9800;
+}
+
+.footer-signup {
+  text-align: center;
+  padding: 20px 0 0;
+}
+
+.signup-btn {
+  background-color: #ffffffef;
+  color: #0f0f0f;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 250px;
+}
+
+.signup-btn:hover {
+  background-color: #5c5b5a;
+}
+
+
+
+
+  #customerReviews {
+    background-color: #f2e6ff;
+    border-radius: 12px;
+    margin: 50px auto;
+    max-width: 600px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  .carousel-inner {
+    min-height: 180px;
+  }
+
+  .carousel-item {
+    padding: 25px;
+  }
+
+
+
+.review-slider {
+  /* overflow: hidden; */
+  white-space: nowrap;
+  position: relative;
+  padding: 20px 0;
+  background: #f9f9f9;
+}
+
+
+.review-card {
+ 
+  margin-right: 20px;
+  min-width: 300px;
+  max-width: 300px;
+  flex: 0 0 auto;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  transition: transform 0.3s ease;
+    flex: 0 0 300px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  
+  white-space: normal;
+  /* overflow-wrap: break-word; */
+}
+
+
+/* Star Styling */
+.review-card span {
+  font-size: 20px;
+  margin: 0 1px;
+}
+
+
+
+
+.review-track {
+  display: flex;
+  animation: slideReviews 30s linear infinite;
+  gap: 20px;
+}
+
+
+
+.review-card:hover {
+  transform: scale(1.05);
+}
+
+.star {
+  color: #ccc;
+  font-size: 18px;
+}
+
+.star.filled {
+  color: #fbc02d;
+}
+
+.dropdown-menu {
+  z-index: 1050 !important;
+}
+.review-slider {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding: 10px;
+  margin: 20px 0;
+}
+
+.review-track {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+}
+
+.review-card {
+  min-width: 280px;
+  max-width: 300px;
+  flex: 0 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.star {
+  color: #ccc;
+  font-size: 18px;
+}
+
+.star.filled {
+  color: gold;
+}
+.footer-auth-buttons a {
+  font-size: 14px;
+  padding: 6px 14px;
+  font-weight: 500;
+  border-radius: 8px;
+}
+
+
+
+/* Animation */
+@keyframes slideReviews {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/stores.css' %}">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+<style>
+  #map { height: 100%; }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- ======= Stores Intro Section ======= -->
+<div class="container-fluid" style="margin-top: 40px;" data-aos="fade-up" data-aos-duration="800">
+  <div class="row">
+    <div class="col-md-6 d-flex flex-column justify-content-center p-5 gray-background">
+      <h6 class="text-uppercase custom-store-heading">STORE FINDER</h6>
+
+      <h2 class="custom-main-heading">DUXBED NEAR YOU</h2>
+      <p class="custom-description">
+  Search for DUXBED retailers and DUXBED stores near you.
+  Our store locator finds the most suitable place to experience the unique comfort of DUXBED.
+</p>
+    </div>
+    <div class="col-md-6 p-0">
+      <img src="https://linqcdn.avbportal.com/images/6073a5df-1b6c-4012-b903-73401ef61a8d.jpg" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="DUX Store">
+    </div>
+  </div>
+</div>
+
+<!-- ======= Store List Section ======= -->
+<div class="container-fluid" style="margin-top: 40px;" data-aos="fade-up" data-aos-duration="800">
+  <div class="row">
+    <div class="col-md-6 p-0" style="height: 500px;">
+      <div id="map" style="width: 100%; height: 100%; background-color: #eee;"></div>
+    </div>
+    <div class="col-md-6 d-flex flex-column border-start" style="height: 500px; overflow: hidden;">
+      <div class="p-3 border-bottom">
+        <input type="text" id="storeSearch" class="form-control" placeholder="Search for a location..." oninput="searchStore()">
+      </div>
+      <div id="storeResults" style="overflow-y: auto; flex: 1; padding: 15px;"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ======= JavaScript ======= -->
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+<script>
+  const stores = [
+    {
+      name: "Duxbed ",
+      address: "xxxx xxxxx xxxx",
+      lat: 35.1667,
+      lng: 33.3667
+    },
+    {
+      name: "Duxbed",
+      address: "BMS Design Center - Nişpetiye Cad. Şeheryıldızı Sok. no:5 Etiler 34340 Istanbul, Turkey",
+      lat: 41.0766,
+      lng: 29.0226
+    },
+    {
+      name: "Duxbed",
+      address: "A. Metaxa 34, 16674 Glyfada, Greece",
+      lat: 37.8622,
+      lng: 23.7575
+    }
+  ];
+
+  let map;
+  function initMap() {
+    map = L.map('map').setView([37.5, 25.0], 5);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    stores.forEach(store => {
+      const marker = L.marker([store.lat, store.lng]).addTo(map);
+      marker.bindPopup(`<strong>${store.name}</strong><br>${store.address}`);
+    });
+  }
+
+  function renderStores(list) {
+    const container = document.getElementById("storeResults");
+    container.innerHTML = "";
+    list.forEach(store => {
+      const div = document.createElement("div");
+      div.className = "mb-3 pb-2 border-bottom";
+      div.innerHTML = `<strong>${store.name}</strong><br><small>${store.address}</small>`;
+      container.appendChild(div);
+    });
+  }
+
+  function searchStore() {
+    const keyword = document.getElementById("storeSearch").value.toLowerCase();
+    const filtered = stores.filter(store =>
+      store.name.toLowerCase().includes(keyword) || store.address.toLowerCase().includes(keyword)
+    );
+    renderStores(filtered);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    renderStores(stores);
+    initMap();
+  });
+</script>
+
+
+{% endblock %}

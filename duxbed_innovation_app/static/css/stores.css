@@ -1,0 +1,72 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+}
+
+.store-page-container {
+    display: flex;
+    padding: 60px;
+    background-color: #fff;
+}
+
+.store-left {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.store-left h1 {
+    font-size: 40px;
+    margin-top: 10px;
+}
+
+.store-left p {
+    margin-top: 20px;
+    color: #333;
+}
+
+.store-right {
+    flex: 1;
+}
+
+.store-right img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.map-container {
+    display: flex;
+    height: 500px;
+}
+
+#map {
+    width: 60%;
+    height: 100%;
+}
+
+.store-list {
+    width: 40%;
+    overflow-y: auto;
+    background: #fff;
+    padding: 20px;
+}
+
+.store-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+
+.custom-store-heading {
+  color: #5a094c; /* Red (you can use any hex, rgb or named color) */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 22px;
+  
+  letter-spacing: 1px;
+  margin-top: 10;
+  margin-bottom: 15px;
+  
+}
+
